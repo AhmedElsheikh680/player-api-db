@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.api.exception.PlayerException;
 import com.spring.api.model.Player;
 import com.spring.api.service.PlayerService;
 
@@ -19,6 +20,7 @@ public class PlayerController {
 	@Autowired
 	private PlayerService playerService;
 
+	// http://localhost:8085/player-api-db/api/v1/players
 	@GetMapping("/players")
 	public List<Player> players(){
 		return playerService.players();
@@ -26,12 +28,20 @@ public class PlayerController {
 	
 	@GetMapping("/player/{id}")
 	public Player getPlayer(@PathVariable("id") int id) {
-		return playerService.getPlayer(id);
+		Player player = playerService.getPlayer(id);
+		if(player == null) {
+			throw new PlayerException("Player Not Found ID: " + id);
+		}
+		return player;
 	}
 	
 	@GetMapping("/player")
 	public Player getPlayerById(@RequestParam int id) {
-		return playerService.getPlayer(id);
+		Player player = playerService.getPlayer(id);
+		if(player == null) {
+			throw new PlayerException("Player Not Found ID: " + id);
+		}
+		return player;
 	}
 	
 	
