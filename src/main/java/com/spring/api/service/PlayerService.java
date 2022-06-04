@@ -10,4 +10,5 @@ public interface PlayerService {
 	
 	public Player getPlayer(int id);
 
+	public void addPlayer(Player player);
 }

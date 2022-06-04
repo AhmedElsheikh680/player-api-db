@@ -9,5 +9,7 @@ public interface PlayerDao {
 	public List<Player> players();
 	
 	public Player getPlayer(int id);
+	
+	public void addPlayer(Player player);
 
 }

@@ -19,7 +19,7 @@ public class Player {
 	private String name;
 	
 	@Column(name="number")
-	private String number;
+	private int number;
 	
 	@Column(name="address")
 	private String adddress;
@@ -47,11 +47,11 @@ public class Player {
 		this.name = name;
 	}
 
-	public String getNumber() {
+	public int getNumber() {
 		return number;
 	}
 
-	public void setNumber(String number) {
+	public void setNumber(int number) {
 		this.number = number;
 	}
 

@@ -30,4 +30,10 @@ public class PlayerDaoImpl implements PlayerDao {
 		
 	}
 
+	@Override
+	public void addPlayer(Player player) {
+		Session session =  sessionFactory.getCurrentSession();
+		 session.saveOrUpdate(player);
+	}
+
 }
