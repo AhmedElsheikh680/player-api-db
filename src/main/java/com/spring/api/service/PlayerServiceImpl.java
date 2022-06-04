@@ -38,8 +38,8 @@ public class PlayerServiceImpl implements PlayerService{
 
 	@Transactional
 	@Override
-	public void deletePlayer(int id) {
-		playerDao.deletePlayer(id);
+	public int deletePlayer(int id) {
+		return playerDao.deletePlayer(id);
 		
 	}
 	
