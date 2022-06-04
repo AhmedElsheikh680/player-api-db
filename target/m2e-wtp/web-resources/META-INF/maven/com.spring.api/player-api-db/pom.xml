@@ -14,6 +14,11 @@
   <url>http://www.example.com</url>
 
   <properties>
+  	<springframework.version>5.0.6.RELEASE</springframework.version>
+  	<hibernate.version>5.4.1.Final</hibernate.version>
+  	<mysql.connector.version>8.0.15</mysql.connector.version>
+  	<c3po.version>0.9.5.2</c3po.version>
+  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -23,8 +28,19 @@
   <dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
-	    <version>5.3.15</version>
+	    <version>${springframework.version}</version>
 	</dependency>
+	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
 
 	  <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 
@@ -46,8 +62,21 @@
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
-		    <version>8.0.21</version>
+		    <version>${mysql.connector.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>
+		<!-- C3PO -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3po.version}</version>
+		</dependency>
+
 
     <dependency>
       <groupId>junit</groupId>
